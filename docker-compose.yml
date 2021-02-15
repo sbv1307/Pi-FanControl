@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  pifancontrol:
+    image: pifancontrol
+    build:
+      context: .
+      dockerfile: ./Dockerfile
