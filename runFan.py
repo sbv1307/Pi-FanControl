@@ -70,7 +70,7 @@ def getTEMP():
     linje = "\nCurrent CPU temperature: " + str(CPU_temp) + ". Cooling fan " + fanStatus
     logFile.write( linje)
     if (DEBUG):
-        print linje
+        print (linje)
 
     return()
 
@@ -86,7 +86,7 @@ logFile.write( linje)
 linje = "\nMinimum temperature: " + str(minTMP) + "\nMaximum temperature: " + str(maxTMP) 
 logFile.write( linje)
 if (DEBUG):
-    print linje
+    print (linje)
 setup()
 getTEMP()    
 
