@@ -4,5 +4,5 @@ Controles GPIO pin 18 (BCM numbering) depending on the CPU temperature
 
 ## Wiring diagram
 
-![](/wiringDiagram.jpg)
+![](/wiringDiagrame.jpg)
 
