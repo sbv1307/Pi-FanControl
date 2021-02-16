@@ -1,12 +1,20 @@
-FROM arm32v7/alpine:latest
+FROM arm32v7/python:3.7-slim-buster
+
+
 
 LABEL Name=pifancontrol Version=0.0.1
 
-ENV LANG=C.UTF-8 \
-    PYTHONIOENCODING=UTF-8
+ENV PATH="${PATH}:/opt/vc/bin"
 
-RUN apk add --no-cache python3 py3-pip
+RUN apt-get update && \
+    apt-get install build-essential -y
+RUN pip install RPi.GPIO
 
-COPY runFan.py .
+COPY runFan.py /app/
+
+
+WORKDIR /app/
 
 CMD sh
+
+#  docker run -it --privileged --device=/dev/vchiq -e LD_LIBRARY_PATH=/opt/vc/lib -v /opt/vc:/opt/vc:ro sbv1307/pi-fan-control:py

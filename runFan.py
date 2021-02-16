@@ -19,7 +19,7 @@ Version history
 1.0.0 - Initial commit 
 
 '''
-DEBUG = False
+DEBUG = True
 
 SCRIPT_VERSION = 'Run fan - check temperature and activate / de-activate cooling fan. Version V1.0.0'
 
@@ -44,6 +44,8 @@ def setup():
 
 def getCPUtemperature():
     res = os.popen('vcgencmd measure_temp').readline()
+    if (DEBUG):
+        print (res)
     temp =(res.replace("temp=","").replace("'C\n",""))
     return temp
 
