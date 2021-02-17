@@ -2,14 +2,14 @@ version: '3.4'
 
 services:
   pifancontrol:
-    image: pifancontrol
-    build:
-      context: .
-    dockerfile: ./Dockerfile
+    image: sbv1307/pi-fan-control:latest
+    restart: allways
     environment:
       - LD_LIBRARY_PATH=/opt/vc/lib
     volumes:
       - /opt/vc:/opt/vc:ro
     devices:
       - /dev/vchiq
-    privileged: true  
+    privileged: true
+    stdin_open: true
+    tty: true

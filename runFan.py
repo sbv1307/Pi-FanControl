@@ -19,7 +19,7 @@ Version history
 1.0.0 - Initial commit 
 
 '''
-DEBUG = True
+DEBUG = False
 
 SCRIPT_VERSION = 'Run fan - check temperature and activate / de-activate cooling fan. Version V1.0.0'
 
@@ -30,7 +30,7 @@ import signal
 import sys
 import RPi.GPIO as GPIO
 
-LOG_FILE = '/tmp/runFan.log'
+LOG_FILE = '/var/log/runFan.log'
 
 pin = 18 # The pin ID, edit here to change it
 maxTMP = 75 # The maximum temperature in Celsius after which we trigger the fan
